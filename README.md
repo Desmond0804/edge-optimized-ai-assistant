@@ -50,14 +50,6 @@ docker compose -f docker-compose.yml -f compose.override.yml up -d
 
 ## How-To
 
-### Allow developer to treat HTTP as secure on Chrome browser
-
-1\. Launch Chrome browswer and enter the follow in the address bar
-```sh
-chrome://flags/#unsafely-treat-insecure-origin-as-secure
-```
-2\. Enter `http://<ip addr>:8080` in the text box under "*Insecure origins treated as secure*" option. Select *Enabled* > *Relaunch* browser
-
 ### Download LLM model
 
 1\. Proceed to *Create Admin Account* and *Sign in to Open WebUI* the first time launching Open WebUI
@@ -70,12 +62,11 @@ chrome://flags/#unsafely-treat-insecure-origin-as-secure
 
 1\. On Open WebUI, navigate to *Workspace* > click '+' and update the fields below:
 * *Model Name*: Five Star Coffee Cafe
-* *Base Modle (From)*: llama3.2:latest
+* *Base Model (From)*: llama3.2:latest
 * *Visibility*: Public
 * Model Params > *System Prompt*: \<refer to prompt file\>
 * Advanced Params > *Stream Chat Response*: On
 * Advanced Params > *Temperature*: 0
-
 
 2\. Click *Save & Create*
 
@@ -91,6 +82,13 @@ chrome://flags/#unsafely-treat-insecure-origin-as-secure
 * Profile > Settings > Admin Settings > Audio > *Response splitting*: Punctuation
 * (Optional) Profile > Settings > Interface > on *Chat Background Image*, click *Upload* to upload new background image
 
+### Allow developer to treat HTTP as secure on Chrome browser
+
+1\. Launch Chrome browser and enter the follow in the address bar
+```sh
+chrome://flags/#unsafely-treat-insecure-origin-as-secure
+```
+2\. Enter `http://<ip addr>:8080` in the text box under "*Insecure origins treated as secure*" option. Select *Enabled* > *Relaunch* browser
 
 ### Stop application and services
 
@@ -99,6 +97,7 @@ docker compose -f docker-compose.yml -f compose.override.yml down
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Supported Platforms
 

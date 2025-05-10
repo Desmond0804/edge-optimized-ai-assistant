@@ -4,7 +4,7 @@
 # https://dgpu-docs.intel.com/devices/hardware-table.html
 
 FROM ubuntu:24.10
-COPY --from=ghcr.io/astral-sh/uv:0.5.20 /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.7.3 /uv /uvx /bin/
 
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 

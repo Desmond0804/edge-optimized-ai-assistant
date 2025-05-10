@@ -7,8 +7,8 @@ This project contains the software component and ingredients to enable optimized
 ## Getting Started
 
 ### Prerequisites
-* A working [Ubuntu 24.10 LTS](https://releases.ubuntu.com/oracular/ubuntu-24.10-desktop-amd64.iso) host
-* [Intel GPU Driver Installation](https://www.intel.com/content/www/us/en/developer/articles/tool/pytorch-prerequisites-for-intel-gpu/2-6.html#driver-installation) (Optional)
+* A working [Ubuntu 24.04 LTS](https://releases.ubuntu.com/noble/ubuntu-24.04.2-desktop-amd64.iso) or [Ubuntu 24.10](https://releases.ubuntu.com/oracular/ubuntu-24.10-desktop-amd64.iso) host
+* [Intel GPU Driver Installation](https://www.intel.com/content/www/us/en/developer/articles/tool/pytorch-prerequisites-for-intel-gpu/2-7.html) (Optional)
 
 ### Installation
 
@@ -30,17 +30,19 @@ sudo apt install ffmpeg -y
 *Note: If operating behind corporate firewall, setup the proxy settings, e.g. http_proxy, https_proxy, in Linux environment before continuing*
 
 ```sh
-git clone https://github.com/huichuno/edge-optimized-ai-assistant.git && cd edge-optimized-ai-assistant/app/kiosk
+git clone https://github.com/huichuno/edge-optimized-ai-assistant.git
 
-docker compose -f docker-compose.yml build
+cd edge-optimized-ai-assistant/app/kiosk
+
+./build.sh
 ```
 
 4\. Start application and services
 
-*Note: When launching the application for the first time, please allow a few minutes for the dependencies to download. You may check the containers log using lazydocker*
+*Note: When launching the application for the first time, please allow a few minutes for the dependencies to download. You may check the containers log using `lazydocker`*
 
 ```sh
-docker compose -f docker-compose.yml -f compose.override.yml up -d
+./up.sh
 ```
 
 5\. Launch browser and navigate to ***http://locahost:8080/*** on local machine or ***http://\<ip addr\>:8080/*** to access Open WebUI. Open WebUI is a self-hosted, open-source web interface that allows users to interact with LLMs locally

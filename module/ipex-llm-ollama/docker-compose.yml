@@ -5,7 +5,6 @@ services:
       args:
         HTTP_PROXY: ${HTTP_PROXY:-}
         HTTPS_PROXY: ${HTTPS_PROXY:-}
-        NO_PROXY: ${NO_PROXY:-}
       dockerfile: Dockerfile
     image: intelanalytics/ipex-llm-inference-cpp-xpu:latest
     container_name: ipex-llm-ollama

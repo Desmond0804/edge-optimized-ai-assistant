@@ -1,6 +1,6 @@
 include:
   # stt
-  - ../../module/speech2text/docker-compose.yml
+  - ../../module/stt_npu/docker-compose.yml
   # ipex-llm-ollama
   - ../../module/ipex-llm-ollama/docker-compose.yml
   # tts

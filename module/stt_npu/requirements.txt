@@ -37,9 +37,7 @@ starlette==0.46.2
 sympy==1.13.3
 tcmlib==1.2.0
 tokenizers==0.21.1
-torch==2.7.0+xpu
-torchaudio==2.7.0+xpu
-torchvision==0.22.0+xpu
+torch
 tqdm==4.67.1
 transformers==4.51.3
 typing-extensions==4.12.2

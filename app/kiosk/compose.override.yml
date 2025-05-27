@@ -5,3 +5,4 @@ services:
   ipex-llm-ollama:
     volumes:
       - ./.cache/ollama:/root/.ollama/models
+  melotts:

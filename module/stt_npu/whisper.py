@@ -144,6 +144,7 @@ def parse_args(argv=None):
     parser.add_argument('-d', '--device', action='store', default="auto", help="Set the OpenVINO device for the model. Ex. GPU")
     parser.add_argument('-P', '--port', action='store', default=9000, type=int, help="Server tcp port")
     parser.add_argument('-H', '--host', action='store', default='localhost', help="Host to listen on, Ex. 0.0.0.0")
+    parser.add_argument('-c', '--cache_dir', action='store', default='/app/ov_home/', help="Cache directory for OpenVINO.")
     parser.add_argument('--preload', action='store_true', help="Preload model and exit.")
 
     return parser.parse_args()
@@ -160,12 +161,13 @@ if __name__ == "__main__":
         else: 
             device = "CPU"
 
-    model_dir=args.model.split("/")[-1]
+    model_name=args.model.split("/")[-1]
+    model_dir=args.cache_dir + model_name
     if not Path(model_dir).exists():
         optimum_cli(model_id=args.model, output_dir=Path(model_dir))
 
     ov_config = dict()
-    ov_config["CACHE_DIR"] = "./cache"
+    ov_config["CACHE_DIR"] = model_dir + "/npu_cache"
 
     pipe = openvino_genai.WhisperPipeline(
         models_path=model_dir, 

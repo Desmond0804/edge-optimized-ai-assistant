@@ -47,4 +47,4 @@ RUN uv venv --python 3.12 && \
 ENV PATH="/app/.venv/bin:$PATH"
 
 ARG CLI_ARGS=""
-CMD uv run init_model.py && uv run whisper.py $CLI_ARGS
+CMD uv run whisper.py $CLI_ARGS

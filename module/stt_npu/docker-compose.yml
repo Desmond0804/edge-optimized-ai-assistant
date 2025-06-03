@@ -23,6 +23,7 @@ services:
       - /dev/accel/accel0
     volumes:
       - ./.cache/stt/hf_home:/app/hf_home
+      - ./.cache/stt/ov_home:/app/ov_home
     shm_size: 32G
     deploy:
       resources:

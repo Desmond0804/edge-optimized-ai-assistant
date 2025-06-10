@@ -7,3 +7,9 @@ services:
     volumes:
       - ./.cache/ollama:/root/.ollama/models
   melotts:
+    volumes:
+      - ./.cache/tts/hf_home:/app/hf_home
+      - ./.cache/tts/nltk_data:/app/nltk_data
+      - ./.cache/tts/Malaya:/root/Malaya
+      - ./.cache/tts/Malaya-Speech:/root/Malaya-Speech
+      - ./.cache/tts/jieba:/tmp
